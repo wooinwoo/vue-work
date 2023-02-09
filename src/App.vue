@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <header>
@@ -13,7 +12,9 @@
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/todoList">todo-List</RouterLink>
+        <RouterLink to="/todoList">TodoList</RouterLink>
+        <RouterLink to="/pagination">Pagination</RouterLink>
+        <RouterLink to="/infiniteScroll">InfiniteScroll</RouterLink>
       </nav>
     </div>
   </header>
@@ -39,11 +40,11 @@ nav {
   margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
+nav a.router-link-active {
   color: var(--color-text);
 }
 
-nav a.router-link-exact-active:hover {
+nav a.router-link-active:hover {
   background-color: transparent;
 }
 
