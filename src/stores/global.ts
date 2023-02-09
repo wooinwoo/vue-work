@@ -1,11 +1,14 @@
 import { defineStore } from "pinia";
 
+////////////////////////////////////////////////////////////////////////////////////////
+// Todo
+////////////////////////////////////////////////////////////////////////////////////////
+
 interface itemData {
   title: string;
   checkStatus: boolean;
   delStatus: boolean;
 }
-
 export const todoListData = defineStore("global", {
   state: () => {
     return {
@@ -39,6 +42,17 @@ export const inputData = defineStore("global2", {
   state: () => {
     return {
       inputValue: "dasd",
+    };
+  },
+});
+
+////////////////////////////////////////////////////////////////////////////////////////
+// observer
+////////////////////////////////////////////////////////////////////////////////////////
+export const observer = defineStore("global3", {
+  state: () => {
+    return {
+      observerState: false,
     };
   },
 });
