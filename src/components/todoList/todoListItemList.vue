@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import todoListItem from "@/components/todoList/todoListItem.vue";
+import todoListItem from "@/components/todoList/TodoListItem.vue";
 import { todoListData } from "@/stores/global";
 const data = todoListData();
 </script>
