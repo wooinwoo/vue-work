@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
 import { todoListData } from "@/stores/global";
-const data = todoListData();
 interface Props {
   itemData: {
     title: string;
@@ -10,6 +9,7 @@ interface Props {
   };
   itemId: string;
 }
+const data = todoListData();
 const props = defineProps<Props>();
 const onCheck = (e: Event) => {
   console.log(e);
