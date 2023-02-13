@@ -15,6 +15,7 @@
         <RouterLink to="/todoList">TodoList</RouterLink>
         <RouterLink to="/pagination">Pagination</RouterLink>
         <RouterLink to="/infiniteScroll">InfiniteScroll</RouterLink>
+        <RouterLink to="/webeditor">Webeditor</RouterLink>
       </nav>
     </div>
   </header>

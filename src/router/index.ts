@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import todoList from "../views/todoList.vue";
 import pagination from "@/views/pagination.vue";
 import infiniteScroll from "@/views/infiniteScroll.vue";
+import webeditor from "@/views/webeditor.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: "/infiniteScroll",
       name: "infiniteScroll",
       component: infiniteScroll,
+    },
+    {
+      path: "/webeditor",
+      name: "webeditor",
+      component: webeditor,
     },
   ],
 });
