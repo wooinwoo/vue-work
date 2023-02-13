@@ -27,12 +27,10 @@ const getData = () => {
 };
 
 onMounted(() => {
-  console.log(2);
   getData;
 });
 </script>
 <template>
-  <div></div>
   <Table :header="header" :data="data" />
   <triggerObserver @triggerIntersected="getData" />
 </template>
