@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
 interface Props {
-  header: Array<string>;
   data: [
     {
       no: number;
@@ -12,14 +11,16 @@ interface Props {
     }
   ];
 }
+
 const props = defineProps<Props>();
-console.log(props.header);
+
+const header = ["NO", "TEL", "ADDRESS", "NAME"];
 </script>
 
 <template>
   <table>
     <thead>
-      <th v-for="item in props.header" :key="item">{{ item }}</th>
+      <th v-for="item in header" :key="item">{{ item }}</th>
     </thead>
     <tbody>
       <tr v-for="(lineData, i) in props.data" :key="i">

@@ -8,7 +8,6 @@ const pageSize = ref(7); //한 페이지당 데이터 사이즈
 const pageNum = ref(0); //현재 페이지
 const sliceData = ref(); //해당 페이지에 대한 데이터 사이즈에 맞게 자름
 const pageCount = ref(); //총 페이지 수
-const header = ["NO", "TEL", "ADDRESS", "NAME"];
 
 const dataSlice = () => {
   sliceData.value = data.value.slice(
@@ -46,7 +45,7 @@ const pageChange = (page: number) => {
 </script>
 
 <template>
-  <Table :header="header" :data="sliceData" />
+  <Table :data="sliceData" />
   <div class="btn-cover">
     <button :disabled="pageNum === 0" @click="prevPage" class="page-btn">
       이전
@@ -59,7 +58,6 @@ const pageChange = (page: number) => {
       다음
     </button>
   </div>
-
   <div class="btn-group2">
     <button
       :disabled="Math.floor(pageNum / 7) * 7 - 7 < 0"

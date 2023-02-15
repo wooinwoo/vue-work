@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import todoListHeader from "@/components/todoList/TodoListHeader.vue";
-import todoListInput from "@/components/todoList/TodoListInput.vue";
-import todoListItemList from "@/components/todoList/TodoListItemList.vue";
+import todoListHeader from "@/components/TodoList/TodoListHeader.vue";
+import todoListInput from "@/components/TodoList/TodoListInput.vue";
+import todoListItemList from "@/components/TodoList/TodoListItemList.vue";
 </script>
 
 <template>

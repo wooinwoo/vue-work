@@ -2,12 +2,11 @@
 import axios from "axios";
 import { onMounted, ref, toRaw } from "vue";
 import Table from "@/components/Table/Table.vue";
-import triggerObserver from "@/components/triggerObserver.vue";
+import triggerObserver from "@/components/TriggerObserver.vue";
 
 const data = ref(); // 총 데이터
 const pageNum = ref(0); //현재 페이지
 const pageSize = ref(20); //한 페이지당 데이터 사이즈
-const header = ["NO", "TEL", "ADDRESS", "NAME"];
 
 const getData = () => {
   pageNum.value++;
@@ -31,7 +30,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <Table :header="header" :data="data" />
+  <Table :data="data" />
   <triggerObserver @triggerIntersected="getData" />
 </template>
 
