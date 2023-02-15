@@ -9,17 +9,70 @@
 3. yarn add file:./ckeditor5 파일 추가
 -->
 <template>
-  <ckeditor :editor="editor" v-model="editorData" :config="editorConfig" />
+  <div>
+    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig" />
+  </div>
 </template>
 
 <script setup lang="ts">
 import Editor from "ckeditor5-custom-build/build/ckeditor";
-import CKEditor from "@ckeditor/ckeditor5-vue";
 import { ref, watch } from "vue";
+import MyUploadAdapter from "@/utils/uploadAdapter";
 
 const editor = ref(Editor); // 에디터 등록
-const editorData = ref("<p>Content of the editor.</p>"); //초기 데이터
-const editorConfig = ref({ language: "ko" }); // 에디터 설정값
+const editorData = ref("HelloWorld"); //초기 데이터
+const editorConfig = ref({
+  toolbar: [
+    "heading",
+    "|",
+    "fontBackgroundColor",
+    "fontColor",
+    "fontSize",
+    "bold",
+    "italic",
+    "|",
+    "alignment",
+    "bulletedList",
+    "numberedList",
+    "indent",
+    "outdent",
+    "|",
+    "imageUpload",
+    "insertTable",
+    "link",
+    "|",
+    "undo",
+    "redo",
+  ],
+  table: {
+    contentToolbar: [
+      "tableColumn",
+      "tableRow",
+      "mergeTableCells",
+      "tableProperties",
+      "tableCellProperties",
+    ],
+  },
+  image: {
+    resize: true,
+    toolbar: [
+      "imageStyle:alignLeft",
+      "imageStyle:alignRight",
+      "imageStyle:inline",
+      "imageStyle:side",
+    ],
+  },
+  // ✅ 이미지 업로드 플러그인
+  extraPlugins: [
+    function MyCustomUploadAdapterPlugin(editor: any) {
+      editor.plugins.get("FileRepository").createUploadAdapter = (
+        loader: any
+      ) => {
+        return new MyUploadAdapter(loader);
+      };
+    },
+  ],
+}); // 에디터 설정값
 
 watch(editorData, (new_data, old_data) => {
   console.log(editorData.value); //입력값 데이터 출력 - HTML태그로 출력 됨
@@ -31,6 +84,10 @@ watch(editorData, (new_data, old_data) => {
 .ck-editor__editable {
   color: black;
   min-height: 300px;
+}
+
+.ck-editor__editable strong {
+  font-weight: 700;
 }
 </style>
 
