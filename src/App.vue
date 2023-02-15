@@ -2,20 +2,27 @@
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125" />
+    <RouterLink to="/">
+      <img
+        alt="Vue logo"
+        class="logo"
+        src="@/assets/logo.svg"
+        width="125"
+        height="125"
+    /></RouterLink>
 
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/searchBar">SearchBar</RouterLink>
         <RouterLink to="/todoList">TodoList</RouterLink>
         <RouterLink to="/pagination">Pagination</RouterLink>
         <RouterLink to="/infiniteScroll">InfiniteScroll</RouterLink>
         <RouterLink to="/webeditor">Webeditor</RouterLink>
+        <RouterLink to="/sign-in">Sign in</RouterLink>
+        <RouterLink to="/sign-up">Sign up</RouterLink>
+        <RouterLink to="/contactus">Contact us</RouterLink>
+        <RouterLink to="/social-login">Social Login</RouterLink>
       </nav>
     </div>
   </header>
